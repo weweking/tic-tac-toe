@@ -48,16 +48,16 @@ void printMessage(const string& message, const string& lang) {
         cout << message << endl;
     }
     else if (lang == "eng") {
-        if (message == "Некорректный ход. Попробуйте снова.") {
+        if (message == "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ С…РѕРґ. РџРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°.") {
             cout << "Invalid move. Please try again." << endl;
         }
-        else if (message == "Игрок ") {
+        else if (message == "РРіСЂРѕРє ") {
             cout << "Player " << endl;
         }
-        else if (message == "победил!") {
+        else if (message == "РїРѕР±РµРґРёР»!") {
             cout << "has won!" << endl;
         }
-        else if (message == "Ничья!") {
+        else if (message == "РќРёС‡СЊСЏ!") {
             cout << "Draw!" << endl;
         }
     }
@@ -65,11 +65,11 @@ void printMessage(const string& message, const string& lang) {
 
 int main() {
     string lang;
-    cout << "Выберите язык / Choose language (ru/eng): ";
+    cout << "Р’С‹Р±РµСЂРёС‚Рµ СЏР·С‹Рє / Choose language (ru/eng): ";
     cin >> lang;
 
     while (lang != "ru" && lang != "eng") {
-        cout << "Некорректный ввод. Пожалуйста, выберите язык (ru/eng): ";
+        cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ. РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІС‹Р±РµСЂРёС‚Рµ СЏР·С‹Рє (ru/eng): ";
         cin >> lang;
     }
 
@@ -84,14 +84,14 @@ int main() {
         printDesk(desk);
         int row, col;
 
-        printMessage("Игрок " + string(1, currentPlayer) + ", введите номер строки и столбца (0-2): ", lang);
+        printMessage("РРіСЂРѕРє " + string(1, currentPlayer) + ", РІРІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СЂРѕРєРё Рё СЃС‚РѕР»Р±С†Р° (0-2): ", lang);
 
         cin >> row >> col;
 
         if (cin.fail() || row < 0 || row >= SIZE || col < 0 || col >= SIZE || desk[row][col] != ' ') {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            printMessage("Некорректный ход. Попробуйте снова.", lang);
+            printMessage("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ С…РѕРґ. РџРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°.", lang);
             continue;
         }
 
@@ -99,13 +99,13 @@ int main() {
 
         if (checkWin(desk, currentPlayer)) {
             printDesk(desk);
-            printMessage("Игрок " + string(1, currentPlayer) + " победил!", lang);
+            printMessage("РРіСЂРѕРє " + string(1, currentPlayer) + " РїРѕР±РµРґРёР»!", lang);
             break;
         }
 
         if (isBoardFull(desk)) {
             printDesk(desk);
-            printMessage("Ничья!", lang);
+            printMessage("РќРёС‡СЊСЏ!", lang);
             break;
         }
 
