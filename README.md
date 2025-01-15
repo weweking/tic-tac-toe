@@ -1,2 +1,3 @@
 # tic-tac-toe
-tic-tac-toe in c++ with graphics via console
+Eng: tic-tac-toe in c++ with graphics through console
+Ru: крестики-нолики на c++ с графикой через консоль
